@@ -1,0 +1,95 @@
+
+scan_timeout = 500
+
+command_timeout = 1000
+
+add_newline = false
+
+right_format = "$status$cmd_duration$time"
+
+
+
+format = """
+
+$username\
+
+$hostname\
+
+[\uE0B0](fg:#C9AB6B bg:#2B2E36)\
+
+$directory\
+
+$git_branch\
+
+[\uE0B0](fg:#2B2E36) """
+
+
+
+[username]
+
+show_always = true
+
+format = "[ $user]($style)"
+
+style_user = "bold bg:#C9AB6B fg:#17191F"
+
+style_root = "bold bg:#7E2F3B fg:#EDE3D6"
+
+
+
+[hostname]
+
+ssh_only = false
+
+format = "[@$hostname ]($style)"
+
+style = "bold bg:#C9AB6B fg:#17191F"
+
+
+
+[directory]
+
+truncation_length = 3
+
+truncation_symbol = "…/"
+
+format = "[ $path ]($style)"
+
+style = "bold bg:#2B2E36 fg:#D8D3C6"
+
+
+
+[git_branch]
+
+symbol = "\uF09B \uE0A0 "
+
+format = "[ $symbol$branch ]($style)"
+
+style = "bg:#2B2E36 fg:#C0737C"
+
+
+
+[status]
+
+disabled = false
+
+format = "[\uE0B6](fg:#7E2F3B)[ ✘ $status ](bold bg:#7E2F3B fg:#EDE3D6)[\uE0B4](fg:#7E2F3B) "
+
+
+
+[cmd_duration]
+
+min_time = 2000
+
+format = "[\uE0B6](fg:#B98A55)[\uF252 $duration](bold bg:#B98A55 fg:#17191F)[\uE0B4](fg:#B98A55) "
+
+
+
+[time]
+
+disabled = false
+
+time_format = "%I:%M:%S %p"
+
+format = "[\uE0B6](fg:#2B2E36)[\uF017 $time](bg:#2B2E36 fg:#D8D3C6)[\uE0B4](fg:#2B2E36)"
+
