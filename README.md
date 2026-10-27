@@ -6,10 +6,10 @@ droite le code de retour, la durée de la commande et l'heure. Il va avec ma con
 
 ## Installation (Linux, sans sudo)
 
-Une seule ligne à copier :
+Une seule ligne à copier (elle marche aussi pour mettre à jour : relance-la quand tu veux) :
 
 ```bash
-git clone https://github.com/Kasouker/starship-config.git ~/.config/starship && bash ~/.config/starship/install.sh
+{ [ -f ~/.config/starship/install.sh ] || git clone https://github.com/Kasouker/starship-config.git ~/.config/starship; } && git -C ~/.config/starship pull -q && bash ~/.config/starship/install.sh
 ```
 
 Le script `install.sh` installe starship dans `~/.local/bin` s'il est absent, puis fait le lien
