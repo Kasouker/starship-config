@@ -4,20 +4,17 @@ Mon prompt [starship](https://starship.rs) : utilisateur, machine, dossier et br
 droite le code de retour, la durée de la commande et l'heure. Il va avec ma config zsh
 ([zsh-config](https://github.com/Kasouker/zsh-config)), qui l'installe aussi.
 
-## Installation (sans sudo)
+## Installation (Linux, sans sudo)
+
+Une seule ligne à copier :
 
 ```bash
-mkdir -p ~/.local/bin && export PATH="$HOME/.local/bin:$PATH"
-command -v starship >/dev/null || curl -fsSL https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
-git clone https://github.com/Kasouker/starship-config.git ~/.config/starship
-ln -sf ~/.config/starship/starship.toml ~/.config/starship.toml
+git clone https://github.com/Kasouker/starship-config.git ~/.config/starship && bash ~/.config/starship/install.sh
 ```
 
-Puis, si ton shell n'est pas déjà configuré pour starship (zsh-config le fait), ajoute à la fin de `~/.zshrc` :
-
-```bash
-eval "$(starship init zsh)"
-```
+Le script `install.sh` installe starship dans `~/.local/bin` s'il est absent, puis fait le lien
+`~/.config/starship.toml`. Si ton shell n'est pas déjà configuré pour starship (zsh-config le fait), il te dit la
+ligne à ajouter à `~/.zshrc`.
 
 ## La police
 
